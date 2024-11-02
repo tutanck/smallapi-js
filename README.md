@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to cslink 👋</h1>
+<h1 align="center">Welcome to smallapi-js 👋</h1>
 <p>
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
@@ -10,18 +10,18 @@
 
 > Client/Server link
 
-Cslink allow [smallapi](https://smallapi.io/) users to generate a complete client using axios for their APIs.
+Smallapi-js is a small wrapper wrote in javascript that allow [smallapi](https://smallapi.io/) users to uses their APIs server functions from the client side.
 
 ## install
 
 ```sh
-npm install -g cslink
+npm install -g smallapi-js
 ```
 
 ## Usage
 
 ```sh
-cslink {serverUrl} [dst] [install] [serverVar] [decodeKey]
+smallapi-js {serverUrl} [dst] [install] [serverVar] [decodeKey]
 ```
 
 Required parameters:
@@ -38,7 +38,7 @@ Optional parameters:
 ### Example
 
 ```sh
-cslink http://localhost:3097 dst=src/api install=true serverVar=process.env.REACT_APP_API_BASE_URL decodeKey=my-secret-key
+smallapi-js http://localhost:3097 dst=src/api install=true serverVar=process.env.REACT_APP_API_BASE_URL decodeKey=my-secret-key
 ```
 
 ## Author

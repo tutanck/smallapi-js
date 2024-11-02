@@ -2,11 +2,8 @@
   "name": "smallapi-js",
   "version": "0.0.0",
   "type": "module",
-  "description": "cslink",
+  "description": "smallapi-js",
   "main": "src",
-  "bin": {
-    "cslink": "./src/index.js"
-  },
   "preferGlobal": true,
   "scripts": {
     "lint": "eslint .",
