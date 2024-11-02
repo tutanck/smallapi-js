@@ -12,7 +12,6 @@ export default function connect(serverUrl, { decodeKey = null }) {
   get(serverUrl)
     .then(async (indexMap) => {
       let descriptor;
-      let fromConf = false;
 
       if (hasConf(indexMap)) {
         try {
@@ -22,36 +21,39 @@ export default function connect(serverUrl, { decodeKey = null }) {
 
           const conf = await get(confUrl);
 
+          console.log({ conf });
+
           const { routing } = conf;
+
+          console.log({ routing });
 
           const apiMap = routing[API_BASE_URI];
 
-          if (!(isArray(apiMap) && apiMap.length > 0))
+          console.log({ apiMap });
+
+          if (!(isArray(apiMap) && apiMap.length > 0)) {
             throw new Error('Invalid or empty api-map');
+          }
 
           descriptor = _.groupBy(apiMap, 'name');
 
-          fromConf = true;
-
-          console.log(`generating from api map descriptor..`);
-
-          console.log(descriptor);
+          console.log({ descriptor });
         } catch (error) {
           console.error(error);
-          console.log(`api conf unreachable on server "${serverUrl}"`);
-          throw new Error(`api conf unreachable on server "${serverUrl}"`);
+          console.log(`Api conf unreachable on server "${serverUrl}"`);
+          throw new Error(`Api conf unreachable on server "${serverUrl}"`);
         }
       } else {
-        console.log(`api conf not found on server "${serverUrl}"`);
+        console.log(`Api conf not found on server "${serverUrl}"`);
 
-        throw new Error(`api conf not found on server "${serverUrl}"`);
+        throw new Error(`Api conf not found on server "${serverUrl}"`);
       }
 
       const { protocol, host } = parseUrl(serverUrl);
 
       const serverRootUrl = `${protocol}//${host}`;
 
-      const options = { fromConf, apiBaseUri: API_BASE_URI, decodeKey };
+      const options = { apiBaseUri: API_BASE_URI, decodeKey };
 
       console.log({ descriptor, serverRootUrl, options });
     })
