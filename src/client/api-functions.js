@@ -1,3 +1,4 @@
+import getFunction from './functions.js';
 import getNaming from './nomenclature.js';
 
 function getApiFunctions(descriptor, { get, post, put, del }) {
@@ -9,14 +10,16 @@ function getApiFunctions(descriptor, { get, post, put, del }) {
 
       const fnName = getNaming(key);
 
-      console.log({ fnName });
+      const [description] = value;
 
-      const fns = {
-        [fnName]: '',
+      const fn = getFunction(description, { get, post, put, del });
+
+      const cc = {
+        [fnName]: fn,
         ...acc,
       };
 
-      return fns;
+      return cc;
     },
     {},
   );

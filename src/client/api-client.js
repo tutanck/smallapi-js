@@ -5,11 +5,12 @@ import {
   makeDel,
   createInstance,
 } from '@tutanck/axios';
+import slashes from 'remove-trailing-slash';
 
 function getApiClient({ serverRootUrl, apiBaseUri, decodeKey }) {
   console.log({ serverRootUrl, apiBaseUri, decodeKey });
 
-  const baseURL = [serverRootUrl, apiBaseUri].join('/');
+  const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
 
   console.log({ baseURL });
 
