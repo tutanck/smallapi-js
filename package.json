@@ -1,0 +1,42 @@
+{
+  "name": "smallapi-js",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "cslink",
+  "main": "src",
+  "bin": {
+    "cslink": "./src/index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tutanck",
+  "license": "ISC",
+  "dependencies": {
+    "@tutanck/axios": "0.0.10",
+    "axios": "0.21.1",
+    "isarray": "2.0.5",
+    "lodash": "4.17.21",
+    "remove-trailing-slash": "0.1.1",
+    "url-parse": "1.5.10"
+  },
+  "devDependencies": {
+    "@babel/core": "7.19.3",
+    "@babel/eslint-parser": "7.19.1",
+    "cross-env": "7.0.3",
+    "env-cmd": "10.1.0",
+    "eslint": "8.25.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.7.1"
+  },
+  "keywords": [
+    "smallapi",
+    "client",
+    "api",
+    "fetch",
+    "wrapper"
+  ]
+}
