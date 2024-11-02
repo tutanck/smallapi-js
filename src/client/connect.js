@@ -4,7 +4,7 @@ import parseUrl from 'url-parse';
 import slashes from 'remove-trailing-slash';
 import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants.js';
 import { hasConf } from '../utils/conf.js';
-import { get } from '../axios/client.js';
+import { get } from '../utils/axios.js';
 
 export default async function connect(serverUrl, { decodeKey = null }) {
   console.log('-> fetching', serverUrl);
@@ -41,14 +41,14 @@ export default async function connect(serverUrl, { decodeKey = null }) {
 
       const serverRootUrl = `${protocol}//${host}`;
 
-      const connection = {
+      const serverConfig = {
         descriptor,
         serverRootUrl,
         apiBaseUri: API_BASE_URI,
         decodeKey,
       };
 
-      return connection;
+      return serverConfig;
     })
     .catch((error) => {
       console.error(error);
