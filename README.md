@@ -15,7 +15,7 @@ Smallapi-js is a small wrapper wrote in javascript that allow [smallapi](https:/
 ## install
 
 ```sh
-npm install -g smallapi-js
+npm install smallapi-js
 ```
 
 ## Usage
