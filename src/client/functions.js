@@ -15,7 +15,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter) => {
         const url = `${uri}?${qs.stringify({ filter })}`;
 
-        console.log({ url });
+        console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -28,9 +28,11 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (docs, options = {}) => {
         const url = `${uri}?${qs.stringify({ options })}`;
 
-        console.log({ url });
+        const data = { data: { docs } };
 
-        call(url, { data: { docs } });
+        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+
+        call(url, data);
       };
 
       return fn;
@@ -41,7 +43,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (id, projection = {}, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ projection, options })}`;
 
-        console.log({ url });
+        console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -54,7 +56,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter, projection = {}, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, projection, options })}`;
 
-        console.log({ url });
+        console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -67,7 +69,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (id, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ options })}`;
 
-        console.log({ url });
+        console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -80,7 +82,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, options })}`;
 
-        console.log({ url });
+        console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -93,9 +95,11 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (id, update, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ options })}`;
 
-        console.log({ url });
+        const data = { data: { update } };
 
-        call(url, { data: { update } });
+        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+
+        call(url, data);
       };
 
       return fn;
@@ -106,9 +110,11 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter, update, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, options })}`;
 
-        console.log({ url });
+        const data = { data: { update } };
 
-        call(url, { data: { update } });
+        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+
+        call(url, data);
       };
 
       return fn;
@@ -120,9 +126,11 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
 
     const url = `${uri}?${qs.stringify({ query })}`;
 
-    console.log({ url });
+    const data = { data: body, params };
 
-    call(url, { data: body, params });
+    console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+
+    call(url, data);
   };
 
   return defaultFn;
