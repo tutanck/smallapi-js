@@ -41,11 +41,14 @@ export default function connect(serverUrl, { decodeKey = null }) {
 
       const serverRootUrl = `${protocol}//${host}`;
 
-      const options = { apiBaseUri: API_BASE_URI, decodeKey };
+      const connection = {
+        descriptor,
+        serverRootUrl,
+        apiBaseUri: API_BASE_URI,
+        decodeKey,
+      };
 
-      const config = { descriptor, serverRootUrl, options };
-
-      return config;
+      return connection;
     })
     .catch((error) => {
       console.error(error);
