@@ -6,10 +6,10 @@ import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants.js';
 import { hasConf } from '../utils/conf.js';
 import { get } from '../axios/client.js';
 
-export default function connect(serverUrl, { decodeKey = null }) {
+export default async function connect(serverUrl, { decodeKey = null }) {
   console.log('-> fetching', serverUrl);
 
-  get(serverUrl)
+  return await get(serverUrl)
     .then(async (indexMap) => {
       let descriptor;
 

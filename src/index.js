@@ -1,3 +1,7 @@
 import connect from './client/connect.js';
 
-connect('http://localhost:3019/', { decodeKey: 'my-secret-key' });
+const connection = await connect('http://localhost:3019/', {
+  decodeKey: 'my-secret-key',
+});
+
+console.log({ connection });
