@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to smallapi-js 👋</h1>
+<h1 align="center">Welcome to Smallapi-js 👋</h1>
 <p>
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
@@ -8,7 +8,7 @@
   </a>
 </p>
 
-> Client/Server link
+> Smallapi client wrapper
 
 Smallapi-js is a small wrapper wrote in javascript that allow [smallapi](https://smallapi.io/) users to uses their APIs server functions from the client side.
 
