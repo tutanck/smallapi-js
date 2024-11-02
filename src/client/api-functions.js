@@ -2,8 +2,6 @@ import getFunction from './functions.js';
 import getNaming from './nomenclature.js';
 
 function getApiFunctions(descriptor, { get, post, put, del }) {
-  console.log({ descriptor, get, post, put, del });
-
   const apiFunctions = Object.entries(descriptor).reduce(
     (acc, [key, value]) => {
       console.log({ key, value });
@@ -24,7 +22,7 @@ function getApiFunctions(descriptor, { get, post, put, del }) {
     {},
   );
 
-  console.log({ apiFunctions });
+  return apiFunctions;
 
   /* const { get, post, put, del } = apiHandles;
 

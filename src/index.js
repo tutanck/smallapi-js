@@ -10,7 +10,6 @@ async function api(serverUrl, { apiKey = null }) {
   const { descriptor, serverRootUrl, apiBaseUri, decodeKey } = serverConfig;
 
   console.log({
-    serverConfig,
     descriptor,
     serverRootUrl,
     apiBaseUri,
@@ -20,14 +19,6 @@ async function api(serverUrl, { apiKey = null }) {
   const apiClient = getApiClient({ serverRootUrl, apiBaseUri, decodeKey });
 
   const { get, post, put, del } = apiClient;
-
-  console.log({
-    apiClient,
-    get,
-    post,
-    put,
-    del,
-  });
 
   const apiFunctions = getApiFunctions(descriptor, { get, post, put, del });
 

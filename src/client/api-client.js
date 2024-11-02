@@ -8,11 +8,9 @@ import {
 import slashes from 'remove-trailing-slash';
 
 function getApiClient({ serverRootUrl, apiBaseUri, decodeKey }) {
-  console.log({ serverRootUrl, apiBaseUri, decodeKey });
-
   const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
 
-  console.log({ baseURL });
+  console.log({ baseURL, serverRootUrl, apiBaseUri, decodeKey });
 
   const instance = createInstance({
     baseURL,
