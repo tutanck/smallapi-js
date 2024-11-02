@@ -1,3 +1,3 @@
-import run from './client/run.js';
+import connect from './client/connect.js';
 
-run('http://localhost:3097/', { decodeKey: 'my-secret-key' });
+connect('http://localhost:3097/', { decodeKey: 'my-secret-key' });
