@@ -30,9 +30,6 @@ Required parameters:
 
 Optional parameters:
 
-- dst: the destination path for generated files • default '.'
-- install: true|false install required modules • default false
-- serverVar: if filled replace the server url in the api client file • default null
 - decodeKey: decode secret used for data encryption • default null
 
 ### Example
