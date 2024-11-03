@@ -23,36 +23,6 @@ function getApiFunctions(descriptor, { get, post, put, del }) {
   );
 
   return apiFunctions;
-
-  /* const { get, post, put, del } = apiHandles;
-
-  console.log({ serverConfig });
-
-  const baseURL = apiBaseUri;
-
-  const apiClient = createInstance({
-    baseURL,
-  });
-
-  const get = makeGet(apiClient, {
-    encryption: { decodeKey },
-  });
-
-  const post = makePost(apiClient, {
-    encryption: { decodeKey },
-  });
-
-  const put = makePut(apiClient, {
-    encryption: { decodeKey },
-  });
-
-  const del = makeDel(apiClient, {
-    encryption: { decodeKey },
-  });
-
-  const apiHandles = { get, post, put, del };
-
-  return apiHandles; */
 }
 
 export { getApiFunctions };
