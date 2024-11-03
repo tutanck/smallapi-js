@@ -1,1 +1,5 @@
-export { default as api } from './client';
+import smallapi from './client';
+
+export { smallapi };
+
+export default smallapi;
