@@ -1,6 +1,6 @@
 {
   "name": "smallapi-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "smallapi-js",
   "main": "src",
