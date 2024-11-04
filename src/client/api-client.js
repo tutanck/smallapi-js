@@ -7,7 +7,13 @@ import {
 } from '@tutanck/axios';
 import slashes from 'remove-trailing-slash';
 
-function getApiClient({ serverRootUrl, apiBaseUri, decodeKey, debug = false }) {
+function getApiClient({
+  serverRootUrl,
+  apiBaseUri,
+  apiKey,
+  decodeKey,
+  debug = false,
+}) {
   const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
 
   if (debug === true)
@@ -15,6 +21,9 @@ function getApiClient({ serverRootUrl, apiBaseUri, decodeKey, debug = false }) {
 
   const instance = createInstance({
     baseURL,
+    headers: {
+      authorization: apiKey,
+    },
   });
 
   const get = makeGet(instance, {

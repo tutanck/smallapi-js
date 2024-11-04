@@ -6,10 +6,7 @@ import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants.js';
 import { hasConf } from '../utils/conf.js';
 import { get } from '../utils/axios.js';
 
-export default async function connect(
-  serverUrl,
-  { decodeKey = null, debug = false },
-) {
+export default async function connect(serverUrl, { debug = false }) {
   if (debug === true) console.log('-> fetching', serverUrl);
 
   return await get(serverUrl)
@@ -48,7 +45,6 @@ export default async function connect(
         descriptor,
         serverRootUrl,
         apiBaseUri: API_BASE_URI,
-        decodeKey,
       };
 
       return serverConfig;

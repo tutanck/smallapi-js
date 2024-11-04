@@ -2,26 +2,30 @@ import connect from './connect.js';
 import getApiClient from './api-client.js';
 import getApiFunctions from './api-functions.js';
 
-async function api(serverUrl, { apiKey = null, debug = false }) {
+async function api(
+  serverUrl,
+  { apiKey = null, decodeKey = null, debug = false },
+) {
+  if (debug === true) console.log({ serverUrl, apiKey, decodeKey, debug });
+
   const serverConfig = await connect(serverUrl, {
-    decodeKey: apiKey,
     debug,
   });
 
-  const { descriptor, serverRootUrl, apiBaseUri, decodeKey } = serverConfig;
+  const { descriptor, serverRootUrl, apiBaseUri } = serverConfig;
 
   if (debug === true)
     console.log({
       descriptor,
       serverRootUrl,
       apiBaseUri,
-      decodeKey,
     });
 
   const apiClient = getApiClient({
     serverRootUrl,
     apiBaseUri,
     decodeKey,
+    apiKey,
     debug,
   });
 
