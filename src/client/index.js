@@ -37,10 +37,11 @@ async function api(
     { debug },
   );
 
-  if (debug === true)
-    console.log({
-      apiFunctions,
+  if (debug === true) {
+    Object.entries(apiFunctions).map(([fnName, fn]) => {
+      console.log(`${fnName}: ${fn.toString()}`);
     });
+  }
 
   return apiFunctions;
 }

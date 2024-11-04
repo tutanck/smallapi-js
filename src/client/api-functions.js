@@ -21,8 +21,8 @@ function getApiFunctions(
       );
 
       const cc = {
-        [fnName]: fn,
         ...acc,
+        [fnName]: fn,
       };
 
       return cc;

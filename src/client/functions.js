@@ -5,7 +5,7 @@ function getFunction(
   { get, post, put, del },
   { debug = false, fnName },
 ) {
-  if (debug === true) console.log({ uri, name, verb, fnName });
+  if (debug === true) console.log({ fnName, uri, name, verb });
 
   const call = {
     PUT: put,
