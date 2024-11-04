@@ -21,7 +21,7 @@ function getFunction(
 
         if (debug === true) console.log(`${verb} '${url}'`);
 
-        call(url);
+        return call(url);
       };
 
       return fn;
@@ -37,7 +37,7 @@ function getFunction(
         if (debug === true)
           console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
-        call(url, data);
+        return call(url, data);
       };
 
       return fn;
@@ -50,7 +50,7 @@ function getFunction(
 
         if (debug === true) console.log(`${verb} '${url}'`);
 
-        call(url);
+        return call(url);
       };
 
       return fn;
@@ -63,7 +63,7 @@ function getFunction(
 
         if (debug === true) console.log(`${verb} '${url}'`);
 
-        call(url);
+        return call(url);
       };
 
       return fn;
@@ -76,7 +76,7 @@ function getFunction(
 
         if (debug === true) console.log(`${verb} '${url}'`);
 
-        call(url);
+        return call(url);
       };
 
       return fn;
@@ -89,7 +89,7 @@ function getFunction(
 
         if (debug === true) console.log(`${verb} '${url}'`);
 
-        call(url);
+        return call(url);
       };
 
       return fn;
@@ -105,7 +105,7 @@ function getFunction(
         if (debug === true)
           console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
-        call(url, data);
+        return call(url, data);
       };
 
       return fn;
@@ -121,7 +121,7 @@ function getFunction(
         if (debug === true)
           console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
-        call(url, data);
+        return call(url, data);
       };
 
       return fn;
@@ -138,7 +138,7 @@ function getFunction(
     if (debug === true)
       console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
-    call(url, data);
+    return call(url, data);
   };
 
   return defaultFn;
