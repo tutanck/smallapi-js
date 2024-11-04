@@ -2,35 +2,44 @@ import connect from './connect.js';
 import getApiClient from './api-client.js';
 import getApiFunctions from './api-functions.js';
 
-async function api(serverUrl, { apiKey = null }) {
+async function api(serverUrl, { apiKey = null, debug = false }) {
   const serverConfig = await connect(serverUrl, {
     decodeKey: apiKey,
+    debug,
   });
 
   const { descriptor, serverRootUrl, apiBaseUri, decodeKey } = serverConfig;
 
-  console.log({
-    descriptor,
+  if (debug === true)
+    console.log({
+      descriptor,
+      serverRootUrl,
+      apiBaseUri,
+      decodeKey,
+    });
+
+  const apiClient = getApiClient({
     serverRootUrl,
     apiBaseUri,
     decodeKey,
+    debug,
   });
-
-  const apiClient = getApiClient({ serverRootUrl, apiBaseUri, decodeKey });
 
   const { get, post, put, del } = apiClient;
 
-  const apiFunctions = getApiFunctions(descriptor, { get, post, put, del });
+  const apiFunctions = getApiFunctions(
+    descriptor,
+    { get, post, put, del },
+    { debug },
+  );
 
-  console.log({
-    apiFunctions,
-  });
+  if (debug === true)
+    console.log({
+      apiFunctions,
+    });
 
   return apiFunctions;
 }
-
-// Debug
-api('http://localhost:9657/', { apiKey: 'my-secret-key' });
 
 export { api };
 

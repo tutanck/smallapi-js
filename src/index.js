@@ -1,4 +1,4 @@
-import smallapi from './client';
+import smallapi from './client/index.js';
 
 export { smallapi };
 

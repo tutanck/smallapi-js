@@ -1,6 +1,10 @@
 import qs from 'qs';
 
-function getFunction({ uri, name, verb }, { get, post, put, del }) {
+function getFunction(
+  { uri, name, verb },
+  { get, post, put, del },
+  { debug = false },
+) {
   const call = {
     PUT: put,
     GET: get,
@@ -15,7 +19,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter) => {
         const url = `${uri}?${qs.stringify({ filter })}`;
 
-        console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -30,7 +34,8 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
 
         const data = { data: { docs } };
 
-        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+        if (debug === true)
+          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -43,7 +48,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (id, projection = {}, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ projection, options })}`;
 
-        console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -56,7 +61,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter, projection = {}, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, projection, options })}`;
 
-        console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -69,7 +74,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (id, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ options })}`;
 
-        console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -82,7 +87,7 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
       const fn = async (filter, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, options })}`;
 
-        console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`Calling '${url}'`);
 
         call(url);
       };
@@ -97,7 +102,8 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
 
         const data = { data: { update } };
 
-        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+        if (debug === true)
+          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -112,7 +118,8 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
 
         const data = { data: { update } };
 
-        console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+        if (debug === true)
+          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -128,7 +135,8 @@ function getFunction({ uri, name, verb }, { get, post, put, del }) {
 
     const data = { data: body, params };
 
-    console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+    if (debug === true)
+      console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
 
     call(url, data);
   };

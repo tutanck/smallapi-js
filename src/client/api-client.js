@@ -7,10 +7,11 @@ import {
 } from '@tutanck/axios';
 import slashes from 'remove-trailing-slash';
 
-function getApiClient({ serverRootUrl, apiBaseUri, decodeKey }) {
+function getApiClient({ serverRootUrl, apiBaseUri, decodeKey, debug = false }) {
   const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
 
-  console.log({ baseURL, serverRootUrl, apiBaseUri, decodeKey });
+  if (debug === true)
+    console.log({ baseURL, serverRootUrl, apiBaseUri, decodeKey });
 
   const instance = createInstance({
     baseURL,

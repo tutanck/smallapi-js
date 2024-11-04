@@ -1,16 +1,20 @@
 import getFunction from './functions.js';
 import getNaming from './nomenclature.js';
 
-function getApiFunctions(descriptor, { get, post, put, del }) {
+function getApiFunctions(
+  descriptor,
+  { get, post, put, del },
+  { debug = false },
+) {
   const apiFunctions = Object.entries(descriptor).reduce(
     (acc, [key, value]) => {
-      console.log({ key, value });
+      if (debug === true) console.log({ key, value });
 
       const fnName = getNaming(key);
 
       const [description] = value;
 
-      const fn = getFunction(description, { get, post, put, del });
+      const fn = getFunction(description, { get, post, put, del }, { debug });
 
       const cc = {
         [fnName]: fn,

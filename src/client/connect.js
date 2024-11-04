@@ -6,8 +6,11 @@ import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants.js';
 import { hasConf } from '../utils/conf.js';
 import { get } from '../utils/axios.js';
 
-export default async function connect(serverUrl, { decodeKey = null }) {
-  console.log('-> fetching', serverUrl);
+export default async function connect(
+  serverUrl,
+  { decodeKey = null, debug = false },
+) {
+  if (debug === true) console.log('-> fetching', serverUrl);
 
   return await get(serverUrl)
     .then(async (indexMap) => {
@@ -17,7 +20,7 @@ export default async function connect(serverUrl, { decodeKey = null }) {
         try {
           const confUrl = `${slashes(serverUrl)}${CONF_ROUTE_URI}`;
 
-          console.log('-> fetching', confUrl);
+          if (debug === true) console.log('-> fetching', confUrl);
 
           const conf = await get(confUrl);
 
