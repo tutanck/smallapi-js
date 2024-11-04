@@ -8,8 +8,6 @@ function getApiFunctions(
 ) {
   const apiFunctions = Object.entries(descriptor).reduce(
     (acc, [key, value]) => {
-      if (debug === true) console.log({ key, value });
-
       const fnName = getNaming(key);
 
       const [description] = value;

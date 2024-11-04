@@ -7,24 +7,8 @@ import {
 } from '@tutanck/axios';
 import slashes from 'remove-trailing-slash';
 
-function getApiClient({
-  serverRootUrl,
-  apiBaseUri,
-  apiKey,
-  decodeKey,
-  debug = false,
-}) {
+function getApiClient({ serverRootUrl, apiBaseUri, apiKey, decodeKey }) {
   const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
-
-  if (debug === true)
-    console.log({
-      serverRootUrl,
-      apiBaseUri,
-      baseURL,
-      decodeKey,
-      apiKey,
-      debug,
-    });
 
   const instance = createInstance({
     baseURL,
