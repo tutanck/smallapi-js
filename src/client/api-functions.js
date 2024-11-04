@@ -14,7 +14,11 @@ function getApiFunctions(
 
       const [description] = value;
 
-      const fn = getFunction(description, { get, post, put, del }, { debug });
+      const fn = getFunction(
+        description,
+        { get, post, put, del },
+        { debug, fnName },
+      );
 
       const cc = {
         [fnName]: fn,

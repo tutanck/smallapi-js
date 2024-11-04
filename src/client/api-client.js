@@ -17,7 +17,14 @@ function getApiClient({
   const baseURL = [slashes(serverRootUrl), apiBaseUri].join('');
 
   if (debug === true)
-    console.log({ baseURL, serverRootUrl, apiBaseUri, decodeKey });
+    console.log({
+      serverRootUrl,
+      apiBaseUri,
+      baseURL,
+      decodeKey,
+      apiKey,
+      debug,
+    });
 
   const instance = createInstance({
     baseURL,

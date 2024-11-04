@@ -14,12 +14,12 @@ async function api(
 
   const { descriptor, serverRootUrl, apiBaseUri } = serverConfig;
 
-  if (debug === true)
+  /* if (debug === true)
     console.log({
       descriptor,
       serverRootUrl,
       apiBaseUri,
-    });
+    }); */
 
   const apiClient = getApiClient({
     serverRootUrl,

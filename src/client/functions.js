@@ -3,8 +3,10 @@ import qs from 'qs';
 function getFunction(
   { uri, name, verb },
   { get, post, put, del },
-  { debug = false },
+  { debug = false, fnName },
 ) {
+  if (debug === true) console.log({ uri, name, verb, fnName });
+
   const call = {
     PUT: put,
     GET: get,
@@ -14,6 +16,9 @@ function getFunction(
 
   const Routine = 'Routine';
   if (name.endsWith(Routine)) {
+    //
+
+    // count
     const count = 'count';
     if (name.startsWith(count)) {
       const fn = async (filter) => {
@@ -27,6 +32,7 @@ function getFunction(
       return fn;
     }
 
+    // create
     const create = 'create';
     if (name.startsWith(create)) {
       const fn = async (docs, options = {}) => {
@@ -43,6 +49,7 @@ function getFunction(
       return fn;
     }
 
+    // findById
     const findById = 'findById';
     if (name.startsWith(findById)) {
       const fn = async (id, projection = {}, options = {}) => {
@@ -56,6 +63,7 @@ function getFunction(
       return fn;
     }
 
+    // findByQuery
     const findByQuery = 'findByQuery';
     if (name.startsWith(findByQuery)) {
       const fn = async (filter, projection = {}, options = {}) => {
@@ -69,6 +77,7 @@ function getFunction(
       return fn;
     }
 
+    // removeById
     const removeById = 'removeById';
     if (name.startsWith(removeById)) {
       const fn = async (id, options = {}) => {
@@ -82,6 +91,7 @@ function getFunction(
       return fn;
     }
 
+    // removeByQuery
     const removeByQuery = 'removeByQuery';
     if (name.startsWith(removeByQuery)) {
       const fn = async (filter, options = {}) => {
@@ -95,6 +105,7 @@ function getFunction(
       return fn;
     }
 
+    // updateById
     const updateById = 'updateById';
     if (name.startsWith(updateById)) {
       const fn = async (id, update, options = {}) => {
@@ -111,6 +122,7 @@ function getFunction(
       return fn;
     }
 
+    // updateByQuery
     const updateByQuery = 'updateByQuery';
     if (name.startsWith(updateByQuery)) {
       const fn = async (filter, update, options = {}) => {
@@ -128,6 +140,7 @@ function getFunction(
     }
   }
 
+  // defaultFn
   const defaultFn = async ({ body, query, params }) => {
     // TODO remove :params from the uri first to get a raw uri
 
