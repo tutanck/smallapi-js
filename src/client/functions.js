@@ -19,7 +19,7 @@ function getFunction(
       const fn = async (filter) => {
         const url = `${uri}?${qs.stringify({ filter })}`;
 
-        if (debug === true) console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`${verb} '${url}'`);
 
         call(url);
       };
@@ -35,7 +35,7 @@ function getFunction(
         const data = { data: { docs } };
 
         if (debug === true)
-          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+          console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -48,7 +48,7 @@ function getFunction(
       const fn = async (id, projection = {}, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ projection, options })}`;
 
-        if (debug === true) console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`${verb} '${url}'`);
 
         call(url);
       };
@@ -61,7 +61,7 @@ function getFunction(
       const fn = async (filter, projection = {}, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, projection, options })}`;
 
-        if (debug === true) console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`${verb} '${url}'`);
 
         call(url);
       };
@@ -74,7 +74,7 @@ function getFunction(
       const fn = async (id, options = {}) => {
         const url = `${uri}${id}?${qs.stringify({ options })}`;
 
-        if (debug === true) console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`${verb} '${url}'`);
 
         call(url);
       };
@@ -87,7 +87,7 @@ function getFunction(
       const fn = async (filter, options = {}) => {
         const url = `${uri}?${qs.stringify({ filter, options })}`;
 
-        if (debug === true) console.log(`Calling '${url}'`);
+        if (debug === true) console.log(`${verb} '${url}'`);
 
         call(url);
       };
@@ -103,7 +103,7 @@ function getFunction(
         const data = { data: { update } };
 
         if (debug === true)
-          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+          console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -119,7 +119,7 @@ function getFunction(
         const data = { data: { update } };
 
         if (debug === true)
-          console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+          console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
         call(url, data);
       };
@@ -136,7 +136,7 @@ function getFunction(
     const data = { data: body, params };
 
     if (debug === true)
-      console.log(`Calling '${url}' with data: ${JSON.stringify(data)}`);
+      console.log(`${verb} '${url}' with data: ${JSON.stringify(data)}`);
 
     call(url, data);
   };
