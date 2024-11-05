@@ -26,6 +26,13 @@
   "files": [
     "dist"
   ],
+  "tags": [
+    "smallapi",
+    "javascript",
+    "api",
+    "client",
+    "wrapper"
+  ],
   "author": "tutanck <tutanck@gmail.com>",
   "license": "ISC",
   "repository": {
