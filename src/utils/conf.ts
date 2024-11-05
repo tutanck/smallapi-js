@@ -1,4 +1,4 @@
-import { CONF_ROUTE_METHOD, CONF_ROUTE_URI } from '../values/constants.js';
+import { CONF_ROUTE_METHOD, CONF_ROUTE_URI } from '../values/constants';
 
 export function hasConf(indexMap = []) {
   const confRoute = indexMap.find((route) => route?.path === CONF_ROUTE_URI);
