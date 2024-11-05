@@ -13,7 +13,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint --ext .ts ./src",
     "test": "npm run format && npm run lint && jest --coverage",
     "test:watch": "jest --coverage --watchAll",
     "format": "prettier --write src/**/*.ts",
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@babel/eslint-parser": "7.19.1",
+    "@babel/preset-env": "^7.19.4",
     "@babel/preset-typescript": "^7.18.6",
     "@types/jest": "^29.2.0",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
