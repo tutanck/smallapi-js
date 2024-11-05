@@ -99,7 +99,7 @@ const createdUser: object = await api.createUser(userInfos);
 
 ## API
 
-#### count{{Model}}(query): number
+#### count{Model}(query): number
 
 Counts the number of documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -114,7 +114,7 @@ _query_ : **Object** • Indicates how to filter the documents in the collection
 ###### Examples:
 
 ```javascript
-const resultsCount = count{{Model}}(query)
+const resultsCount = count{Model}(query)
 ```
 
 ###### More:
@@ -123,7 +123,7 @@ const resultsCount = count{{Model}}(query)
 
 ---
 
-#### create{{Model}}(docs): documents
+#### create{Model}(docs): documents
 
 Insert one document or an array of documents to the **{{modelName}}** collection.
 
@@ -138,7 +138,7 @@ _docs_ : **Array|Object** • The documents to insert in the collection **{{mode
 ###### Examples:
 
 ```javascript
-const results = create{{Model}}(docs)
+const results = create{Model}(docs)
 ```
 
 ###### More:
@@ -147,7 +147,7 @@ const results = create{{Model}}(docs)
 
 ---
 
-#### find{{Model}}ById(id, [projection], [options]): document
+#### find{Model}ById(id, [projection], [options]): document
 
 Finds a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -175,14 +175,14 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = find{{Model}}ById(id)
+const result = find{Model}ById(id)
 
 
-const result = find{{Model}}ById(id, { propertyA: 1, propertyB: -1 }, options)
+const result = find{Model}ById(id, { propertyA: 1, propertyB: -1 }, options)
 
-const result = find{{Model}}ById(id, "propertyA -propertyB", options)
+const result = find{Model}ById(id, "propertyA -propertyB", options)
 
-const result = find{{Model}}ById(id, ["propertyA", "propertyC"], options)
+const result = find{Model}ById(id, ["propertyA", "propertyC"], options)
 ```
 
 ###### More:
@@ -195,7 +195,7 @@ const result = find{{Model}}ById(id, ["propertyA", "propertyC"], options)
 
 ---
 
-#### find{{Model}}ByQuery(query, [projection], [options]): documents
+#### find{Model}ByQuery(query, [projection], [options]): documents
 
 Find the documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -224,14 +224,14 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = find{{Model}}ByQuery(query)
+const result = find{Model}ByQuery(query)
 
 
-const result = find{{Model}}ByQuery(query, { propertyA: 1, propertyB: -1 }, options)
+const result = find{Model}ByQuery(query, { propertyA: 1, propertyB: -1 }, options)
 
-const result = find{{Model}}ByQuery(query, "propertyA -propertyB", options)
+const result = find{Model}ByQuery(query, "propertyA -propertyB", options)
 
-const result = find{{Model}}ByQuery(query, ["propertyA", "propertyC"], options)
+const result = find{Model}ByQuery(query, ["propertyA", "propertyC"], options)
 ```
 
 ###### More:
@@ -246,7 +246,7 @@ const result = find{{Model}}ByQuery(query, ["propertyA", "propertyC"], options)
 
 ---
 
-#### remove{{Model}}ById(id, [options]): document
+#### remove{Model}ById(id, [options]): document
 
 Delete a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -270,7 +270,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = remove{{Model}}ById(id, options)
+const result = remove{Model}ById(id, options)
 ```
 
 ###### More:
@@ -281,7 +281,7 @@ const result = remove{{Model}}ById(id, options)
 
 ---
 
-#### remove{{Model}}ByQuery(query, [options]): documents
+#### remove{Model}ByQuery(query, [options]): documents
 
 Delete all the documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -306,7 +306,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = remove{{Model}}ByQuery(query, options)
+const result = remove{Model}ByQuery(query, options)
 ```
 
 ###### More:
@@ -319,7 +319,7 @@ const result = remove{{Model}}ByQuery(query, options)
 
 ---
 
-#### update{{Model}}ById(id, update, [options]): document
+#### update{Model}ById(id, update, [options]): document
 
 Updates a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -349,7 +349,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = update{{Model}}ById(id, update, options)
+const result = update{Model}ById(id, update, options)
 ```
 
 ###### More:
@@ -362,7 +362,7 @@ const result = update{{Model}}ById(id, update, options)
 
 ---
 
-#### update{{Model}}ByQuery(query, update, [options]): document
+#### update{Model}ByQuery(query, update, [options]): document
 
 Updates all the documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -393,7 +393,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = update{{Model}}ByQuery(id, update, options)
+const result = update{Model}ByQuery(id, update, options)
 ```
 
 ###### More:
