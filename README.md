@@ -11,7 +11,7 @@
 
 ## What is Smallapi-js?
 
-Smallapi-js is a small wrapper wrote in javascript that allows [smallapi](https://smallapi.io/) users to uses their APIs server functions from the client side.
+Smallapi-js is a small wrapper wrote in javascript that allows [smallapi](https://smallapi.io/) users to uses their APIs cloud functions from the client side.
 
 ## Table of contents
 
