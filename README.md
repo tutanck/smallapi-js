@@ -99,7 +99,7 @@ A complete example can be found here : https://github.com/tutanck/small-demo/
 
 ## API
 
-#### {{serviceName}}(query): number
+#### count{{Model}}(query): number
 
 Counts the number of documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -123,7 +123,7 @@ const resultsCount = {{serviceName}}(query)
 
 ---
 
-#### {{serviceName}}(docs): documents
+#### create{{Model}}(docs): documents
 
 Insert one document or an array of documents to the **{{modelName}}** collection.
 
@@ -147,7 +147,7 @@ const results = {{serviceName}}(docs)
 
 ---
 
-#### {{serviceName}}(id, [projection], [options]): document
+#### find{{Model}}ById(id, [projection], [options]): document
 
 Finds a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -194,7 +194,7 @@ const result = {{serviceName}}(id, ["propertyA", "propertyC"], options)
 
 ---
 
-#### {{serviceName}}(query, [projection], [options]): documents
+#### find{{Model}}ByQuery(query, [projection], [options]): documents
 
 Find the documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -244,7 +244,7 @@ const result = {{serviceName}}(query, ["propertyA", "propertyC"], options)
 
 ---
 
-#### {{serviceName}}(id, [options]): document
+#### remove{{Model}}ById(id, [options]): document
 
 Delete a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -279,7 +279,7 @@ const result = {{serviceName}}(id, options)
 
 ---
 
-#### {{serviceName}}(query, [options]): documents
+#### remove{{Model}}ByQuery(query, [options]): documents
 
 Delete all the documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -317,7 +317,7 @@ const result = {{serviceName}}(query, options)
 
 ---
 
-#### {{serviceName}}(id, update, [options]): document
+#### update{{Model}}ById(id, update, [options]): document
 
 Updates a single document by its _\_id_ field in the **{{modelName}}** collection.
 
@@ -361,7 +361,7 @@ options)
 
 ---
 
-#### {{serviceName}}(query, update, [options]): document
+#### update{{Model}}ByQuery(query, update, [options]): document
 
 Updates all the documents matching the query parameter in the **{{modelName}}** collection.
 
