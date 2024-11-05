@@ -44,8 +44,8 @@
   },
   "homepage": "https://github.com/tutanck/smallapi-js#readme",
   "dependencies": {
-    "@tutanck/axios": "0.0.10",
     "axios": "0.21.1",
+    "crypto-js": "4.2.0",
     "isarray": "2.0.5",
     "lodash": "4.17.21",
     "qs": "6.11.0",

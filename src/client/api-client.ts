@@ -4,7 +4,7 @@ import {
   makePut,
   makeDel,
   createInstance,
-} from '@tutanck/axios';
+} from '../axios-lib/index';
 import slashes from 'remove-trailing-slash';
 
 function getApiClient({ serverRootUrl, apiBaseUri, apiKey, decodeKey }) {
