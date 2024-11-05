@@ -21,7 +21,8 @@
     "build": "microbundle",
     "prepublishOnly": "npm run build",
     "prerelease": "npm run build",
-    "release": "np"
+    "release": "np",
+    "rab": "np --any-branch"
   },
   "files": [
     "dist"
