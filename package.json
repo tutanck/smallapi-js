@@ -14,8 +14,7 @@
   },
   "scripts": {
     "lint": "eslint --ext .ts ./src",
-    "test": "npm run format && npm run lint && jest --coverage",
-    "test:watch": "jest --coverage --watchAll",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write src/**/*.ts",
     "prebuild": "rimraf dist && npm run format",
     "build": "microbundle",
