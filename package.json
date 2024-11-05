@@ -1,6 +1,6 @@
 {
   "name": "smallapi-js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "smallapi-js",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
