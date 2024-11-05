@@ -1,9 +1,9 @@
 {
   "name": "smallapi-js",
   "version": "0.0.9",
+  "type": "module",
   "description": "smallapi-js",
-  "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.m.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
