@@ -1,7 +1,6 @@
 {
   "name": "smallapi-js",
   "version": "0.0.10",
-  "type": "module",
   "description": "smallapi-js",
   "main": "dist/index.cjs",
   "module": "dist/index.m.js",
