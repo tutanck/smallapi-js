@@ -67,6 +67,10 @@ const createdUser = await api.createUser({
 });
 ```
 
+## Example
+
+A complete example can be found here : https://github.com/tutanck/small-demo/
+
 ## Typescript support
 
 This package export a type definition file so you can use it, out of the box,
@@ -90,12 +94,8 @@ const userInfos: object = {
   age: 32,
 };
 
-const createdUser = await api.createUser(userInfos);
+const createdUser: object = await api.createUser(userInfos);
 ```
-
-## Example
-
-A complete example can be found here : https://github.com/tutanck/small-demo/
 
 ## API
 
@@ -114,7 +114,7 @@ _query_ : **Object** • Indicates how to filter the documents in the collection
 ###### Examples:
 
 ```javascript
-const resultsCount = {{serviceName}}(query)
+const resultsCount = count{{Model}}(query)
 ```
 
 ###### More:
@@ -138,7 +138,7 @@ _docs_ : **Array|Object** • The documents to insert in the collection **{{mode
 ###### Examples:
 
 ```javascript
-const results = {{serviceName}}(docs)
+const results = create{{Model}}(docs)
 ```
 
 ###### More:
@@ -175,14 +175,15 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(id)
+const result = find{{Model}}ById(id)
+
+
+const result = find{{Model}}ById(id, { propertyA: 1, propertyB: -1 }, options)
+
+const result = find{{Model}}ById(id, "propertyA -propertyB", options)
+
+const result = find{{Model}}ById(id, ["propertyA", "propertyC"], options)
 ```
-
-const result = {{serviceName}}(id, { propertyA: 1, propertyB: -1 }, options)
-
-const result = {{serviceName}}(id, "propertyA -propertyB", options)
-
-const result = {{serviceName}}(id, ["propertyA", "propertyC"], options)
 
 ###### More:
 
@@ -223,14 +224,15 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(query)
+const result = find{{Model}}ByQuery(query)
+
+
+const result = find{{Model}}ByQuery(query, { propertyA: 1, propertyB: -1 }, options)
+
+const result = find{{Model}}ByQuery(query, "propertyA -propertyB", options)
+
+const result = find{{Model}}ByQuery(query, ["propertyA", "propertyC"], options)
 ```
-
-const result = {{serviceName}}(query, { propertyA: 1, propertyB: -1 }, options)
-
-const result = {{serviceName}}(query, "propertyA -propertyB", options)
-
-const result = {{serviceName}}(query, ["propertyA", "propertyC"], options)
 
 ###### More:
 
@@ -268,7 +270,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(id, options)
+const result = remove{{Model}}ById(id, options)
 ```
 
 ###### More:
@@ -304,7 +306,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(query, options)
+const result = remove{{Model}}ByQuery(query, options)
 ```
 
 ###### More:
@@ -347,8 +349,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(id, update ,
-options)
+const result = update{{Model}}ById(id, update, options)
 ```
 
 ###### More:
@@ -392,8 +393,7 @@ The following options are available:
 ###### Examples:
 
 ```javascript
-const result = {{serviceName}}(id, update ,
-options)
+const result = update{{Model}}ByQuery(id, update, options)
 ```
 
 ###### More:
