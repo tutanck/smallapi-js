@@ -8,7 +8,7 @@ export type Config = {
   debug?: boolean | undefined;
 };
 
-async function api(
+async function smallapi(
   serverUrl: string,
   { apiKey = null, decodeKey = null, debug = false }: Config,
 ): Promise<Api> {
@@ -48,6 +48,6 @@ async function api(
   return apiFunctions;
 }
 
-export { api };
+export { smallapi };
 
-export default api;
+export default smallapi;
