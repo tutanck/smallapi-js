@@ -44,7 +44,7 @@ $ npm --version
 
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 
-Install the package using npm or Yarn
+Install the package using npm.
 
 ```sh
 $ npm i -S smallapi-js
