@@ -33,11 +33,11 @@ To make sure you have them available on your machine,
 try running the following command.
 
 ```sh
-$ node --version
-v21.5.0
+node --version
+# v21.5.0
 
-$ npm --version
-10.2.4
+npm --version
+# 10.2.4
 ```
 
 ## Installation
@@ -47,7 +47,7 @@ $ npm --version
 Install the package using npm.
 
 ```sh
-$ npm i -S smallapi-js
+npm i -S smallapi-js
 ```
 
 ## Usage
