@@ -7,7 +7,7 @@
 
 [![NPM](https://nodei.co/npm/smallapi-js.png)](https://npmjs.org/package/smallapi-js)
 
-> Smallapi client wrapper
+> Smallapi client API wrapper
 
 ## What is Smallapi-js?
 
@@ -27,10 +27,10 @@ Smallapi-js is a small wrapper wrote in javascript that allows [smallapi](https:
 
 ## Prerequisites
 
-This project requires NodeJS (at least version 6) and NPM.
+This package requires NodeJS and NPM.
 [Node](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
 To make sure you have them available on your machine,
-try running the following command.
+try running the following commands:
 
 ```sh
 node --version
@@ -44,7 +44,7 @@ npm --version
 
 **BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 
-Install the package using npm.
+Install the package using npm:
 
 ```sh
 npm i -S smallapi-js
@@ -69,7 +69,7 @@ const createdUser = await api.createUser({
 
 ## Example
 
-A complete example can be found here : https://github.com/tutanck/small-demo/
+A repository with complete examples can be found here: https://github.com/tutanck/small-demo.
 
 ## Typescript support
 
@@ -85,7 +85,7 @@ const myConfig: Config = {
   apiKey: 'my-secret-key',
 };
 
-const api = await smallapi(myApiUrl, myConfig);
+const api: Api = await smallapi(myApiUrl, myConfig);
 
 const userInfos: object = {
   firstName: 'John',
@@ -98,6 +98,8 @@ const createdUser: object = await api.createUser(userInfos);
 ```
 
 ## API
+
+Here is the list of cloud functions generated when you create a model {Model} on the smallapi platform:
 
 #### count{Model}(query): number
 
