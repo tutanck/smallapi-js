@@ -99,7 +99,7 @@ const createdUser: object = await api.createUser(userInfos);
 
 ## API
 
-Here is the list of cloud functions generated when you create a model {Model} on the smallapi platform:
+Here is the list of cloud functions generated when you create a model called {Model} on the smallapi platform:
 
 #### count{Model}(query): number
 
@@ -423,7 +423,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## License
 
-[MIT License](https://tutanck.mit-license.org/2018) © Anagbla Joan
+[MIT License](https://tutanck.mit-license.org/2018) © Anagbla Joan (tutanck)
 
 ## Contributors ✨
 
