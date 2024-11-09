@@ -1,11 +1,21 @@
-import connect from './connect.js';
-import getApiClient from './api-client.js';
-import getApiFunctions from './api-functions.js';
+import connect from './connect';
+import getApiClient from './api-client';
+import getApiFunctions, { Api } from './api-functions';
 
-async function api(
-  serverUrl,
-  { apiKey = null, decodeKey = null, debug = false },
-) {
+export type Config = {
+  apiKey: string | null | undefined;
+  decodeKey?: string | null | undefined;
+  debug?: boolean | undefined;
+};
+
+async function smallapi(
+  serverUrl: string,
+  { apiKey = null, decodeKey = null, debug = false }: Config,
+): Promise<Api> {
+  if (!serverUrl) {
+    throw new Error("'serverUrl' cannot be undefined or null.");
+  }
+
   if (debug === true) console.log({ serverUrl, apiKey, decodeKey, debug });
 
   const serverConfig = await connect(serverUrl, {
@@ -38,6 +48,6 @@ async function api(
   return apiFunctions;
 }
 
-export { api };
+export { smallapi };
 
-export default api;
+export default smallapi;

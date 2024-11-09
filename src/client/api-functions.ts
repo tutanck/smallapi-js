@@ -1,13 +1,18 @@
-import getFunction from './functions.js';
-import getNaming from './nomenclature.js';
+import getFunction from './functions';
+import getNaming from './nomenclature';
+
+export type Api = { [key: string]: Function };
 
 function getApiFunctions(
   descriptor,
   { get, post, put, del },
   { debug = false },
-) {
+): Api {
   const apiFunctions = Object.entries(descriptor).reduce(
-    (acc, [key, value]) => {
+    (
+      acc,
+      [key, value]: [string, Array<{ uri: any; name: any; verb: any }>],
+    ) => {
       const fnName = getNaming(key);
 
       const [description] = value;

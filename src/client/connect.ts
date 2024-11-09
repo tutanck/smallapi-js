@@ -2,14 +2,14 @@ import _ from 'lodash';
 import isArray from 'isarray';
 import parseUrl from 'url-parse';
 import slashes from 'remove-trailing-slash';
-import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants.js';
-import { hasConf } from '../utils/conf.js';
-import { get } from '../utils/axios.js';
+import { API_BASE_URI, CONF_ROUTE_URI } from '../values/constants';
+import { hasConf } from '../utils/conf';
+import { get } from '../utils/axios';
 
 export default async function connect(serverUrl, { debug = false }) {
   if (debug === true) console.log('-> fetching', serverUrl);
 
-  return await get(serverUrl)
+  return await get(serverUrl, {})
     .then(async (indexMap) => {
       let descriptor;
 
@@ -19,7 +19,7 @@ export default async function connect(serverUrl, { debug = false }) {
 
           if (debug === true) console.log('-> fetching', confUrl);
 
-          const conf = await get(confUrl);
+          const conf = await get(confUrl, {});
 
           const { routing } = conf;
 
