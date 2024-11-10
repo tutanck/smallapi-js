@@ -193,7 +193,7 @@ const result = find{Model}ById(id, ["propertyA", "propertyC"], options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
@@ -244,7 +244,7 @@ const result = find{Model}ByQuery(query, ["propertyA", "propertyC"], options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
@@ -279,7 +279,7 @@ const result = remove{Model}ById(id, options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
@@ -317,7 +317,7 @@ const result = remove{Model}ByQuery(query, options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
@@ -360,7 +360,7 @@ const result = update{Model}ById(id, update, options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
@@ -406,7 +406,7 @@ const result = update{Model}ByQuery(id, update, options)
 
 <!-- TODO use smallapi populate doc page instead -->
 
-[Learn more about the populate option](https://mongoosejs.com/docs/7.x/docs/populate.html)
+[Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
 
