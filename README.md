@@ -101,7 +101,7 @@ const createdUser: object = await api.createUser(userInfos);
 
 Here is the list of cloud functions generated when you create a model called {Model} on the smallapi platform:
 
-#### count{Model}(query): number
+#### count{Model}Documents(query): number
 
 Counts the number of documents matching the query parameter in the **{{modelName}}** collection.
 
@@ -116,7 +116,7 @@ _query_ : **Object** • Indicates how to filter the documents in the collection
 ###### Examples:
 
 ```javascript
-const resultsCount = count{Model}(query)
+const resultsCount = count{Model}Documents(query)
 ```
 
 ###### More:
