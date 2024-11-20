@@ -9,7 +9,7 @@ function getNaming(rawName) {
     if (rawName.startsWith(count)) {
       const modelName = radix.substring(count.length, rawName.length);
 
-      const fnName = `count${modelName}`;
+      const fnName = `count${modelName}Documents`;
       return fnName;
     }
 
