@@ -63,7 +63,10 @@ function getFunction(
         projection: object | string | Array<string> | undefined = {},
         options: object | undefined = {},
       ): Promise<object> => {
-        const url = `${uri}${id}?${qs.stringify({ projection, options })}`;
+        const url = `${uri.replace(':id', id)}?${qs.stringify({
+          projection,
+          options,
+        })}`;
 
         if (debug === true) {
           console.log({ fnName, uri, name, verb });
@@ -104,7 +107,7 @@ function getFunction(
         id: string,
         options: object | undefined = {},
       ): Promise<object> => {
-        const url = `${uri}${id}?${qs.stringify({ options })}`;
+        const url = `${uri.replace(':id', id)}?${qs.stringify({ options })}`;
 
         if (debug === true) {
           console.log({ fnName, uri, name, verb });
@@ -145,7 +148,7 @@ function getFunction(
         update: object,
         options: object | undefined = {},
       ): Promise<object> => {
-        const url = `${uri}${id}?${qs.stringify({ options })}`;
+        const url = `${uri.replace(':id', id)}?${qs.stringify({ options })}`;
 
         const data = { data: { update } };
 
