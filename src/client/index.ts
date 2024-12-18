@@ -1,5 +1,4 @@
 import connect from './connect';
-import getApiClient from './api-client';
 import getApiFunctions, { Api } from './api-functions';
 
 export type Config = {
@@ -10,34 +9,25 @@ export type Config = {
 
 async function smallapi(
   serverUrl: string,
-  { apiKey = null, decodeKey = null, debug = false }: Config,
+  localConfig: Config = {
+    apiKey: null,
+    decodeKey: null,
+    debug: false,
+  },
 ): Promise<Api> {
   if (!serverUrl) {
     throw new Error("'serverUrl' cannot be undefined or null.");
   }
 
-  if (debug === true) console.log({ serverUrl, apiKey, decodeKey, debug });
+  const { apiKey, decodeKey, debug } = localConfig;
 
-  const serverConfig = await connect(serverUrl, {
-    debug,
-  });
+  if (debug === true) {
+    console.log({ serverUrl, apiKey, decodeKey, debug });
+  }
 
-  const { descriptor, serverRootUrl, apiBaseUri } = serverConfig;
+  const serverConfig = await connect(serverUrl, { debug });
 
-  const apiClient = getApiClient({
-    serverRootUrl,
-    apiBaseUri,
-    decodeKey,
-    apiKey,
-  });
-
-  const { get, post, put, del } = apiClient;
-
-  const apiFunctions = getApiFunctions(
-    descriptor,
-    { get, post, put, del },
-    { debug },
-  );
+  const apiFunctions = getApiFunctions(serverConfig, localConfig);
 
   if (debug === true) {
     Object.entries(apiFunctions).map(([fnName, fn]) => {
