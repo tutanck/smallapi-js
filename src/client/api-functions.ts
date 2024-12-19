@@ -52,10 +52,25 @@ function getApiFunctions(serverConfig, localConfig): Api {
         [fnName]: fn,
       };
 
+      if (debug === true) {
+        console.log(
+          'description:',
+          description,
+          { [fnName]: fn },
+          '\n|cc',
+          cc,
+          '\n',
+        );
+      }
+
       return cc;
     },
     {},
   );
+
+  if (debug === true) {
+    console.log({ apiFunctions });
+  }
 
   return apiFunctions;
 }
