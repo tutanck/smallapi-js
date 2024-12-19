@@ -41,7 +41,7 @@ function getNaming(rawName) {
     if (rawName.startsWith(removeById)) {
       const modelName = radix.substring(removeById.length, rawName.length);
 
-      const fnName = `remove${modelName}ByQuery`;
+      const fnName = `remove${modelName}ById`;
       return fnName;
     }
 

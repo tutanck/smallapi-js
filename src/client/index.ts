@@ -2,7 +2,7 @@ import connect from './connect';
 import getApiFunctions, { Api } from './api-functions';
 
 export type Config = {
-  apiKey: string | null | undefined;
+  apiKey?: string | null | undefined;
   decodeKey?: string | null | undefined;
   debug?: boolean | undefined;
 };
