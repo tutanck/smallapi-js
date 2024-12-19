@@ -1,4 +1,15 @@
 import qs from 'qs';
+import {
+  count,
+  create,
+  defaultFn,
+  findById,
+  findByQuery,
+  removeById,
+  removeByQuery,
+  updateById,
+  updateByQuery,
+} from './functions-types';
 
 function getFunction(
   { uri, name, verb },
@@ -19,7 +30,7 @@ function getFunction(
     // count
     const count = 'count';
     if (name.startsWith(count)) {
-      const fn = async (filter: object): Promise<number> => {
+      const countFn: count = async (filter: object): Promise<number> => {
         const url = `${uri}?${qs.stringify({ filter })}`;
 
         if (debug === true) {
@@ -30,13 +41,13 @@ function getFunction(
         return call(url);
       };
 
-      return fn;
+      return countFn;
     }
 
     // create
     const create = 'create';
     if (name.startsWith(create)) {
-      const fn = async (
+      const createFn: create = async (
         docs: object | Array<object>,
         options: object | undefined = {},
       ): Promise<object | Array<object>> => {
@@ -52,13 +63,13 @@ function getFunction(
         return call(url, data);
       };
 
-      return fn;
+      return createFn;
     }
 
     // findById
     const findById = 'findById';
     if (name.startsWith(findById)) {
-      const fn = async (
+      const findByIdFn: findById = async (
         id: string,
         projection: object | string | Array<string> | undefined = {},
         options: object | undefined = {},
@@ -76,13 +87,13 @@ function getFunction(
         return call(url);
       };
 
-      return fn;
+      return findByIdFn;
     }
 
     // findByQuery
     const findByQuery = 'findByQuery';
     if (name.startsWith(findByQuery)) {
-      const fn = async (
+      const findByQueryFn: findByQuery = async (
         filter: object,
         projection: object | string | Array<string> | undefined = {},
         options: object | undefined = {},
@@ -97,13 +108,13 @@ function getFunction(
         return call(url);
       };
 
-      return fn;
+      return findByQueryFn;
     }
 
     // removeById
     const removeById = 'removeById';
     if (name.startsWith(removeById)) {
-      const fn = async (
+      const removeByIdFn: removeById = async (
         id: string,
         options: object | undefined = {},
       ): Promise<object> => {
@@ -117,13 +128,13 @@ function getFunction(
         return call(url);
       };
 
-      return fn;
+      return removeByIdFn;
     }
 
     // removeByQuery
     const removeByQuery = 'removeByQuery';
     if (name.startsWith(removeByQuery)) {
-      const fn = async (
+      const removeByQueryFn: removeByQuery = async (
         filter: object,
         options: object | undefined = {},
       ): Promise<any | object> => {
@@ -137,13 +148,13 @@ function getFunction(
         return call(url);
       };
 
-      return fn;
+      return removeByQueryFn;
     }
 
     // updateById
     const updateById = 'updateById';
     if (name.startsWith(updateById)) {
-      const fn = async (
+      const updateByIdFn: updateById = async (
         id: string,
         update: object,
         options: object | undefined = {},
@@ -160,13 +171,13 @@ function getFunction(
         return call(url, data);
       };
 
-      return fn;
+      return updateByIdFn;
     }
 
     // updateByQuery
     const updateByQuery = 'updateByQuery';
     if (name.startsWith(updateByQuery)) {
-      const fn = async (
+      const updateByQueryFn: updateByQuery = async (
         filter: object,
         update: object,
         options: object | undefined = {},
@@ -183,12 +194,12 @@ function getFunction(
         return call(url, data);
       };
 
-      return fn;
+      return updateByQueryFn;
     }
   }
 
   // defaultFn
-  const defaultFn = async ({
+  const defaultFn: defaultFn = async ({
     body,
     query,
     params,
@@ -197,9 +208,7 @@ function getFunction(
     query: any;
     params: any;
   }): Promise<any> => {
-    // TODO remove :params from the uri first to get a raw uri
-
-    const url = `${uri}?${qs.stringify({ query })}`;
+    const url = `${uri.replace(':params', '')}?${qs.stringify({ query })}`;
 
     const data = { data: body, params };
 

@@ -1,8 +1,30 @@
 import getFunction from './functions';
 import getNaming from './nomenclature';
 import getApiClient from './api-client';
+import {
+  count,
+  create,
+  defaultFn,
+  findById,
+  findByQuery,
+  removeById,
+  removeByQuery,
+  updateById,
+  updateByQuery,
+} from './functions-types';
 
-export type Api = { [key: string]: Function };
+type Api = {
+  [key: string]:
+    | count
+    | create
+    | findById
+    | findByQuery
+    | removeById
+    | removeByQuery
+    | updateById
+    | updateByQuery
+    | defaultFn;
+};
 
 function getApiFunctions(serverConfig, localConfig): Api {
   const { apiKey = null, decodeKey = null, debug = false } = localConfig;

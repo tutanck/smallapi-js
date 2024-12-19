@@ -191,8 +191,6 @@ const result = find{Model}ById(id, ["propertyA", "propertyC"], options)
 
 [Learn more about field selection](https://www.mongodb.com/docs/manual/tutorial/project-fields-from-query-results/)
 
-<!-- TODO use smallapi populate doc page instead -->
-
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
@@ -242,8 +240,6 @@ const result = find{Model}ByQuery(query, ["propertyA", "propertyC"], options)
 
 [Learn more about field selection](https://www.mongodb.com/docs/manual/tutorial/project-fields-from-query-results/)
 
-<!-- TODO use smallapi populate doc page instead -->
-
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
 ---
@@ -276,8 +272,6 @@ const result = remove{Model}ById(id, options)
 ```
 
 ###### More:
-
-<!-- TODO use smallapi populate doc page instead -->
 
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
@@ -314,8 +308,6 @@ const result = remove{Model}ByQuery(query, options)
 ###### More:
 
 [Learn more about queries](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
-
-<!-- TODO use smallapi populate doc page instead -->
 
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
@@ -357,8 +349,6 @@ const result = update{Model}ById(id, update, options)
 ###### More:
 
 [Learn more about field selection](https://www.mongodb.com/docs/manual/tutorial/project-fields-from-query-results/)
-
-<!-- TODO use smallapi populate doc page instead -->
 
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
@@ -403,8 +393,6 @@ const result = update{Model}ByQuery(id, update, options)
 [Learn more about queries](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
 
 [Learn more about field selection](https://www.mongodb.com/docs/manual/tutorial/project-fields-from-query-results/)
-
-<!-- TODO use smallapi populate doc page instead -->
 
 [Learn more about the populate option](https://smallapi.io/docs/page/population)
 
