@@ -19,7 +19,7 @@ Smallapi-js is a small wrapper wrote in javascript that allows [smallapi](https:
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
-- [Typescript support](#typescript-support)
+- [Limited typescript support](#limited-typescript-support)
 - [API](#api)
 - [Contributing](#contributing)
 - [License](#license)
@@ -71,10 +71,11 @@ const createdUser = await api.createUser({
 
 A repository with complete examples can be found here: https://github.com/tutanck/small-demo.
 
-## Typescript support
+## Limited typescript support
 
 This package export a type definition file so you can use it, out of the box,
 inside your Typescript project.
+Due to the dynamic nature of the generated functions, we cannot guarantee full typescript support at this time.
 
 ```typescript
 import { smallapi, Api, Config } from 'smallapi-js';
