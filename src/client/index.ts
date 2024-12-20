@@ -38,7 +38,7 @@ async function smallapi(
   return apiFunctions;
 }
 
-/* (async () => {
+(async () => {
   const api = await smallapi(
     'https://desolate-thicket-04809-1d851952fc60.herokuapp.com/',
   );
@@ -47,8 +47,8 @@ async function smallapi(
 
   // Empty the users collection
   // TODO fix bad types resolution to filters' count and mixed other types
-  await api.create(); 
-})(); */
+  await api.create();
+})();
 
 export { smallapi };
 
