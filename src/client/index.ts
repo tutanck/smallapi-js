@@ -38,6 +38,17 @@ async function smallapi(
   return apiFunctions;
 }
 
+/* (async () => {
+  const api = await smallapi(
+    'https://desolate-thicket-04809-1d851952fc60.herokuapp.com/',
+  );
+
+  console.log('api:', api, '\n');
+
+  // Empty the users collection
+  await api.create();
+})(); */
+
 export { smallapi };
 
 export default smallapi;

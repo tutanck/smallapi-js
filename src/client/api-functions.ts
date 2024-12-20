@@ -13,7 +13,7 @@ import {
   updateByQuery,
 } from './functions-types';
 
-type Api = {
+export type Api = {
   [key: string]:
     | count
     | create
