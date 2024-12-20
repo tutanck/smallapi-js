@@ -26,6 +26,20 @@ export type Api = {
     | defaultFn;
 };
 
+// Rename to API LATER
+export type ApiFunctions = {
+  [key: string]:
+    | count
+    | create
+    | findById
+    | findByQuery
+    | removeById
+    | removeByQuery
+    | updateById
+    | updateByQuery
+    | defaultFn;
+};
+
 function getApiFunctions(serverConfig, localConfig): Api {
   const { apiKey = null, decodeKey = null, debug = false } = localConfig;
 
