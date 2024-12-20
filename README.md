@@ -7,7 +7,7 @@
 
 [![NPM](https://nodei.co/npm/smallapi-js.png)](https://npmjs.org/package/smallapi-js)
 
-> Smallapi client API wrapper
+> Smallapi client for javascript and typescript
 
 ## What is Smallapi-js?
 
