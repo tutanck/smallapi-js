@@ -46,7 +46,7 @@ async function smallapi(
   console.log('api:', api, '\n');
 
   // Empty the users collection
-  await api.create();
+  await api.updateById();
 })(); */
 
 export { smallapi };
