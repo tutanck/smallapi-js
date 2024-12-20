@@ -38,17 +38,22 @@ async function smallapi(
   return apiFunctions;
 }
 
-(async () => {
+async function test() {
   const api = await smallapi(
     'https://desolate-thicket-04809-1d851952fc60.herokuapp.com/',
+    {
+      apiKey: 'HDRTmMSq-GKARxduy-PcPywRnT-HANrf2Jn',
+    },
   );
 
   console.log('api:', api, '\n');
 
   // Empty the users collection
-  // TODO fix bad types resolution to filters' count and mixed other types
-  await api.create();
-})();
+  const users = await api.create();
+
+  console.log('users:', users, '\n');
+}
+test();
 
 export { smallapi };
 
