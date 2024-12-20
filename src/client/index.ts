@@ -46,7 +46,8 @@ async function smallapi(
   console.log('api:', api, '\n');
 
   // Empty the users collection
-  await api.updateById();
+  // TODO fix bad types resolution to filters' count and mixed other types
+  await api.create(); 
 })(); */
 
 export { smallapi };
