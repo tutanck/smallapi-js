@@ -49,7 +49,7 @@ async function test() {
   console.log('api:', api, '\n');
 
   // Empty the users collection
-  const users = await api.create();
+  const users = await api.create(); // TODO fix bad type resolution
 
   console.log('users:', users, '\n');
 }
